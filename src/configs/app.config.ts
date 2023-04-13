@@ -1,8 +1,9 @@
-import { ENV } from "../Env";
+import { ENV } from "../utils/Env";
 
 const AppConfig = {
-  PORT: ENV.PORT || 3000,
-  NODE_ENV: ENV.NODE_ENV || "development",
+  APP_PORT: ENV.APP_PORT || 3000,
+  APP_ENV: ENV.APP_ENV || "development",
+  APP_URL: ENV.APP_URL || "",
 };
 
 export default AppConfig;
