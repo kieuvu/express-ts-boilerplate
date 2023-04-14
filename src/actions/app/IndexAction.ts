@@ -1,7 +1,8 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
+import ActionAbstract from "../../abstracts/action.abstract";
 
-class IndexAction {
-  handle(_: Request, res: Response) {
+class IndexAction extends ActionAbstract {
+  handle(_: Request, res: Response, __: NextFunction) {
     res.send("Vukm");
   }
 }

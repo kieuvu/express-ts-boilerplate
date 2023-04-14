@@ -4,7 +4,7 @@ import IndexAction from "../actions/app/IndexAction";
 
 class AppRoutes extends RouteAbstract {
   initRoutes(): void {
-    this._router.get(RouteConstant.APP_ROUTES.INDEX, IndexAction.handle);
+    this.get(RouteConstant.APP_ROUTES.INDEX, IndexAction);
   }
 }
 
