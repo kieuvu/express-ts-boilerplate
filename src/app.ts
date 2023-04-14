@@ -29,7 +29,7 @@ class App {
     return this;
   }
 
-  public boot(cb: (port: string | number, env: string, url: string) => void = () => {}) {
+  public boot(cb: (port: string | number, env: string, url: string) => void = () => {}): void {
     this._app.listen(this._port, () => cb(this._port, this._env, this._url));
   }
 }
