@@ -9,7 +9,7 @@
     "start": "node dist/index.js",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/server.js\""
   },
-  "author": "",
+  "author": "kieuvu/vukm",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
