@@ -1,6 +1,7 @@
 import express, { Express } from "express";
-import AppConfig from "./configs/app.config";
 import RouteInterface from "./interfaces/route.interface";
+import { ENV } from "./utils/env";
+import APP_ENV from "./enums/env.enum";
 
 class App {
   private _app: Express;
@@ -10,9 +11,9 @@ class App {
 
   public constructor() {
     this._app = express();
-    this._port = AppConfig.APP_PORT;
-    this._env = AppConfig.APP_ENV;
-    this._url = AppConfig.APP_URL;
+    this._port = ENV["APP_PORT"] || 3000;
+    this._env = ENV["APP_ENV"] || APP_ENV.DEVELOPMENT;
+    this._url = ENV["APP_URL"] || "";
   }
 
   private useRoutes(prefix: string, listRoutes: RouteInterface[]): App {
