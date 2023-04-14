@@ -1,5 +1,6 @@
-import express, { Express } from "express";
+import express, { Express, Router } from "express";
 import AppConfig from "./configs/app.config";
+import RouteInterface from "./interfaces/route.interface";
 
 class App {
   private _app: Express;
@@ -14,9 +15,22 @@ class App {
     this._url = AppConfig.APP_URL;
   }
 
+  private useRoutes(prefix: string, router: Router): void {
+    this._app.use(prefix, router);
+  }
+
+  public useWebRoutes(listRoutes: RouteInterface): App {
+    this.useRoutes("/", listRoutes._router);
+    return this;
+  }
+
+  public useApiRoutes(listRoutes: RouteInterface): App {
+    this.useRoutes("/api", listRoutes._router);
+    return this;
+  }
+
   public boot(cb: (port: string | number, env: string, url: string) => void = () => {}) {
     this._app.listen(this._port, () => cb(this._port, this._env, this._url));
-    return this;
   }
 }
 
