@@ -2,8 +2,10 @@ import { NextFunction, Request, Response } from "express";
 import ActionAbstract from "../../abstracts/action.abstract";
 
 class IndexAction extends ActionAbstract {
-  handle(_: Request, res: Response, __: NextFunction) {
-    res.send("Vukm");
+  public override handle(_: Request, res: Response, __: NextFunction): void {
+    res.json({
+      from: "vukm",
+    });
   }
 }
 
