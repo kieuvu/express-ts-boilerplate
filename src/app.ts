@@ -15,18 +15,17 @@ class App {
     this._url = AppConfig.APP_URL;
   }
 
-  private useRoutes(prefix: string, router: Router): void {
+  private useRoutes(prefix: string, router: Router): App {
     this._app.use(prefix, router);
+    return this;
   }
 
   public useWebRoutes(listRoutes: RouteInterface): App {
-    this.useRoutes("/", listRoutes._router);
-    return this;
+    return this.useRoutes("/", listRoutes._router);
   }
 
   public useApiRoutes(listRoutes: RouteInterface): App {
-    this.useRoutes("/api", listRoutes._router);
-    return this;
+    return this.useRoutes("/api", listRoutes._router);
   }
 
   public boot(cb: (port: string | number, env: string, url: string) => void = () => {}): void {

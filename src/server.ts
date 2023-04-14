@@ -1,7 +1,7 @@
 import App from "./app";
 import AppRoutes from "./routes/app.route";
 
-const app = new App();
+const app: App = new App();
 
 app
   .useApiRoutes(AppRoutes)
