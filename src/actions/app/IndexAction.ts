@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 
 class IndexAction {
-  handle(req: Request, res: Response) {
+  handle(_: Request, res: Response) {
     res.send("Vukm");
   }
 }
