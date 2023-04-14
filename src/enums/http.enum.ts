@@ -1,4 +1,4 @@
-enum HttpMethod {
+enum HTTP_METHOD {
   GET = "GET",
   PUT = "PUT",
   PATCH = "PATCH",
@@ -6,4 +6,4 @@ enum HttpMethod {
   POST = "POST",
 }
 
-export default HttpMethod;
+export default HTTP_METHOD;

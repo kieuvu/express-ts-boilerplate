@@ -1,11 +1,11 @@
 import RouteAbstract from "../../abstracts/route.abstract";
-import RouteConstant from "../../constants/route.constant";
-import IndexAction from "../../actions/app/IndexAction";
+import IndexAction from "./app.action";
 import HttpMethod from "../../enums/http.enum";
+import ROUTES from "../../enums/route.enum";
 
 class AppRoutes extends RouteAbstract {
   public override initRoutes(): void {
-    this.defineRoute(HttpMethod.GET, RouteConstant.APP_ROUTES.INDEX, IndexAction);
+    this.defineRoute(HttpMethod.GET, ROUTES.INDEX, IndexAction);
   }
 }
 

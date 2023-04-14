@@ -1,6 +1,6 @@
 import App from "./app";
-import AppRoutes from "./routes/api/app.route";
-import authRoute from "./routes/api/auth.route";
+import AppRoutes from "./modules/app/app.route";
+import authRoute from "./modules/auth/auth.route";
 
 const app: App = new App();
 

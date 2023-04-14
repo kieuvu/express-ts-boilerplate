@@ -1,7 +1,8 @@
 import { Router } from "express";
 import RouteInterface from "../interfaces/route.interface";
 import ActionInterface from "../interfaces/action.interface";
-import HttpMethod from "../enums/http.enum";
+import HTTP_METHOD from "../enums/http.enum";
+import ROUTES from "../enums/route.enum";
 
 abstract class RouteAbstract implements RouteInterface {
   public _router: Router;
@@ -11,21 +12,21 @@ abstract class RouteAbstract implements RouteInterface {
     this.initRoutes();
   }
 
-  public defineRoute(method: HttpMethod, route: string, action: ActionInterface) {
+  public defineRoute(method: HTTP_METHOD, route: ROUTES, action: ActionInterface) {
     switch (method) {
-      case HttpMethod.GET:
+      case HTTP_METHOD.GET:
         this._router.get(route, action.handle);
         break;
-      case HttpMethod.POST:
+      case HTTP_METHOD.POST:
         this._router.post(route, action.handle);
         break;
-      case HttpMethod.PATCH:
+      case HTTP_METHOD.PATCH:
         this._router.patch(route, action.handle);
         break;
-      case HttpMethod.PUT:
+      case HTTP_METHOD.PUT:
         this._router.put(route, action.handle);
         break;
-      case HttpMethod.DELETE:
+      case HTTP_METHOD.DELETE:
         this._router.delete(route, action.handle);
         break;
       default:
