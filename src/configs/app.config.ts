@@ -1,4 +1,4 @@
-import { ENV } from "../utils/Env";
+import { ENV } from "../utils/env";
 
 const AppConfig = {
   APP_PORT: ENV.APP_PORT || 3000,
