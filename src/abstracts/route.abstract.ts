@@ -9,9 +9,7 @@ abstract class RouteAbstract implements RouteInterface {
     this.initRoutes();
   }
 
-  public initRoutes() {
-    console.log("Empty Route");
-  }
+  public abstract initRoutes(): void;
 }
 
 export default RouteAbstract;
