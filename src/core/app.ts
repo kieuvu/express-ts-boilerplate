@@ -1,7 +1,7 @@
 import express, { Express } from "express";
-import RouteInterface from "./interfaces/route.interface";
 import { ENV } from "./utils/env.utils";
 import APP_ENV from "./enums/env.enum";
+import RouteInterface from "./interfaces/route.interface";
 
 class App {
   private _app: Express;
