@@ -1,13 +1,12 @@
-import RouteAbstract from "../abstracts/route.abstract";
+import Route from "core/implements/route.implement";
 import LoginAction from "../actions/auth/login.action";
 import RegisterAction from "../actions/auth/register.action";
-import HTTP_METHOD from "../enums/http.enum";
-import ROUTES from "../enums/route.enum";
+import HTTP_METHOD from "core/enums/http.enum";
 
-class AuthRoutes extends RouteAbstract {
+class AuthRoutes extends Route {
   public override initRoutes(): void {
-    this.defineRoute(HTTP_METHOD.POST, ROUTES.REGISTER, RegisterAction);
-    this.defineRoute(HTTP_METHOD.POST, ROUTES.LOGIN, LoginAction);
+    this.defineRoute(HTTP_METHOD.POST, "/register", RegisterAction);
+    this.defineRoute(HTTP_METHOD.POST, "/login", LoginAction);
   }
 }
 

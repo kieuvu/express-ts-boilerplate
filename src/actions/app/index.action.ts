@@ -1,7 +1,7 @@
+import Action from "core/implements/action.implement";
 import { NextFunction, Request, Response } from "express";
-import ActionAbstract from "../../abstracts/action.abstract";
 
-class IndexAction extends ActionAbstract {
+class IndexAction extends Action {
   public override handle(_: Request, res: Response, __: NextFunction): void {
     res.json({
       from: "vukm",

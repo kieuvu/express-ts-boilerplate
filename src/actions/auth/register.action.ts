@@ -1,7 +1,7 @@
+import Action from "core/implements/action.implement";
 import { NextFunction, Request, Response } from "express";
-import ActionAbstract from "../../abstracts/action.abstract";
 
-class RegisterAction extends ActionAbstract {
+class RegisterAction extends Action {
   public override handle(_: Request, res: Response, __: NextFunction) {
     res.json({
       status: true,

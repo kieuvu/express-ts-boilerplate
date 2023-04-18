@@ -1,11 +1,9 @@
 import { NextFunction, Request, Response } from "express";
-import ActionAbstract from "../../abstracts/action.abstract";
-import ResponseUtils from "../../utils/response.utils";
-import STATUS from "../../enums/status.enum";
+import Action from "core/implements/action.implement";
 
-class LoginAction extends ActionAbstract {
+class LoginAction extends Action {
   public override handle(_: Request, res: Response, __: NextFunction) {
-    res.json(new ResponseUtils().setStatus(STATUS.SUCCESS));
+    res.json(1);
   }
 }
 

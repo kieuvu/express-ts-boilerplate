@@ -1,4 +1,4 @@
-import App from "./core/app";
+import App from "core/app";
 import AppRoutes from "./routes/app.route";
 import authRoute from "./routes/auth.route";
 

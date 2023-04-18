@@ -107,6 +107,10 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
 
     // core path
-    "paths": {}
+    "baseUrl": "src",
+    "paths": {
+      // "@/*": ["*"],
+      "@core": ["core"]
+    }
   }
 }

@@ -1,10 +1,9 @@
+import HTTP_METHOD from "core/enums/http.enum";
+import ActionInterface from "core/interfaces/action.interface";
+import RouteInterface from "core/interfaces/route.interface";
 import { Router } from "express";
-import RouteInterface from "../interfaces/route.interface";
-import ActionInterface from "../interfaces/action.interface";
-import HTTP_METHOD from "../enums/http.enum";
-import ROUTES from "../enums/route.enum";
 
-abstract class RouteAbstract implements RouteInterface {
+abstract class Route implements RouteInterface {
   public _router: Router;
 
   constructor() {
@@ -12,7 +11,7 @@ abstract class RouteAbstract implements RouteInterface {
     this.initRoutes();
   }
 
-  public defineRoute(method: HTTP_METHOD, route: ROUTES, action: ActionInterface) {
+  public defineRoute(method: HTTP_METHOD, route: string, action: ActionInterface) {
     switch (method) {
       case HTTP_METHOD.GET:
         this._router.get(route, action.handle);
@@ -37,4 +36,4 @@ abstract class RouteAbstract implements RouteInterface {
   public abstract initRoutes(): void;
 }
 
-export default RouteAbstract;
+export default Route;
