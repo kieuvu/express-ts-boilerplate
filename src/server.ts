@@ -7,6 +7,6 @@ const app: App = new App();
 app
   .useApiRoutes([AppRoutes, authRoute])
 
-  .boot((port, env, url) => {
+  .boot((port, env, url): void => {
     console.log(`App info: \n- port: ${port} \n- env: ${env} \n- url: ${url}`);
   });

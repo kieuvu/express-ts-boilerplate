@@ -17,7 +17,7 @@ class App {
   }
 
   private useRoutes(prefix: string, listRoutes: RouteInterface[]): App {
-    listRoutes.forEach((route) => {
+    listRoutes.forEach((route): void => {
       this._app.use(prefix, route._router);
     });
 
@@ -32,7 +32,7 @@ class App {
     return this.useRoutes("/api", listRoutes);
   }
 
-  public boot(cb: (port: string | number, env: string, url: string) => void = () => {}): void {
+  public boot(cb: (port: string | number, env: string, url: string) => void = (): void => {}): void {
     this._app.listen(this._port, () => cb(this._port, this._env, this._url));
   }
 }
